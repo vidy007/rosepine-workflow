@@ -7,6 +7,7 @@
 * Primary: IBM Plex Mono / BlexMono Nerd Font
 * Fallback icons: Font Awesome 6
 **Wallpaper**: ![](./rosepine-portal-cake.png) ([original](./gruv-portal-cake.png))
+
 **Patches**:
 * *dmenu*:
     * bar-height
