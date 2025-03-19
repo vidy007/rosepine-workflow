@@ -35,6 +35,7 @@
     * glyph-wide-support
 * *slock*:
     * capscolor
+
 **Perks**:
 * *dmenu*: [powermenu script](./dmenu/powermenu.sh)
 * dwm: [slstatus](./slstatus/)
