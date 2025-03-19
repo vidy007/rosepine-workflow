@@ -1,6 +1,6 @@
 ## **<p align=center>Soho-vibe dots for dwm**</p></n>*<span style="font-size:0.6em;"><p align=center>Just a Rosé Pine rice, nothing more.</p>*
 ## Showcase
-[images go here]
+![](./showcase.png)
 ## Details
 **Fonts**:
 * Primary: IBM Plex Mono / BlexMono Nerd Font
