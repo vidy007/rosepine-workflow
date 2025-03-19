@@ -1,4 +1,5 @@
-## **<p align=center>Soho-vibe dots for dwm**</p></n>*<span style="font-size:0.6em;"><p align=center>Just a Rosé Pine rice, nothing more.</p>*
+**<p align=center>Soho-vibe dots for dwm**</p>
+###### *<p align=center>Just a Rosé Pine rice, nothing more.</p>*
 ## Showcase
 ![](./showcase.png)
 ## Details
