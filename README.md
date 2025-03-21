@@ -38,4 +38,4 @@
 
 **Perks**:
 * *dmenu*: [powermenu script](./dmenu/powermenu.sh)
-* dwm: [slstatus](./slstatus/)
+* *dwm*: [slstatus](./slstatus/)
