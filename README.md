@@ -21,7 +21,7 @@ Showcased programs:
 **Patches**:
 * *dmenu*:
     * bar-height
-    * border
+    * bordercolor
     * caseinsensitive
     * lineheight
     * xyw
