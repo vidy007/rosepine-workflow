@@ -47,9 +47,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      	instance    title    tags mask   isfloating   CenterThisWindow?     monitor */
- 	{ "st",         NULL,       NULL,    0,          0,           1,		    -1 },
+ 	{ "st",         NULL,       NULL,    0,          0,           0,		    -1 },
  	{ "Gimp",       NULL,       NULL,    0,          1,           0,                    -1 },
  	{ "Firefox",    NULL,       NULL,    1 << 8,     0,           1,                    -1 },
+	{ "Steam",      NULL,       NULL,    0,          0,           0,                    -1 },
 };
 
 /* layout(s) */
@@ -82,7 +83,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static const char *dmenucmd[] = { "rofi", "-show", "drun", "-config", ".config/rofi/launcher.rasi", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
-static const char *termcmd[]  = { "alacritty", "--config-file", "/home/artem/.config/alacritty/alacrity.toml", NULL };
+static const char *termcmd[]  = { "st", "-G", "1910x1037", NULL };
 static const char *voldowm[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-", NULL};
 static const char *volup[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", NULL};
 static const char *mute[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL};

@@ -1,15 +1,22 @@
 --- dmenu.c
 +++ dmenu.c
-@@ -685,9 +685,11 @@ setup(void)
- 	swa.override_redirect = True;
- 	swa.background_pixel = scheme[SchemeNorm][ColBg].pixel;
- 	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask;
--	win = XCreateWindow(dpy, root, x, y, mw, mh, 0,
-+	win = XCreateWindow(dpy, root, x, y, mw, mh, border_width,
- 	                    CopyFromParent, CopyFromParent, CopyFromParent,
- 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
-+	if (border_width)
-+		XSetWindowBorder(dpy, win, scheme[SchemeBorder][ColFg].pixel);
- 	XSetClassHint(dpy, win, &ch);
+@@ -722,7 +729,7 @@ setup(void)
+ static void
+ usage(void)
+ {
+-	die("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
++	die("usage: dmenu [-bfinv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
+ 	    "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]");
+ }
  
- 
+@@ -744,7 +751,9 @@ main(int argc, char *argv[])
+ 		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
+ 			fstrncmp = strncasecmp;
+ 			fstrstr = cistrstr;
+-		} else if (i + 1 == argc)
++		} else if (!strcmp(argv[i], "-n")) /* instant select only match */
++			instant = 1;
++		else if (i + 1 == argc)
+ 			usage();
+ 		/* these options take one argument */
+ 		else if (!strcmp(argv[i], "-l"))   /* number of lines in vertical list */

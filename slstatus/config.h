@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "";
+static const char unknown_str[] = "none";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -79,8 +79,10 @@ static const char vol[] = "muted=`wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{
 
 static const struct arg args[] = {
     /* function format          argument */
-    { cpu_perc,             "   %s%% ",      NULL },
-    { run_command,          "|  %s ",         vol },
-    { keymap,               "|  %s ",         NULL },
-    { datetime,             "| %s",           "%T" },
+    { wifi_perc,            "   %s%% ",      "wlx949034ec65de"},
+    { cpu_perc,             "|  %s%% ",      NULL  	       },
+    { run_command,          "|  %s ",        vol              },
+    { keymap,               "|  %s",         NULL 	       },
+    { keyboard_indicators,  "(%s) ",          "c"              },
+    { datetime,             "| %s",           "%T"             },
 };
