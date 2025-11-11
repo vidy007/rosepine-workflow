@@ -1,7 +1,11 @@
 ### **<p align=center>Soho-vibe dots for dwm**</p>
 ###### *<p align=center>Just a Rosé Pine rice, nothing more.</p>*
 ## Showcase
-![](./showcase.png)
+![](./docs/1.png)
+![](./docs/2.png)
+![](./docs/3.png)
+![](./docs/4.png)
+![](./docs/5.png)
 ## Details
 Showcased programs:
 > alacritty
