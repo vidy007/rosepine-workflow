@@ -7,15 +7,16 @@
 ![](./docs/4.png)
 ![](./docs/5.png)
 ## Details
-Showcased programs:
-> alacritty
-> dmenu
-> dunst
-> nvim
-> picom
-> slstatus
-> st
-> zen browser
+**Showcased programs:**
+- alacritty
+- dmenu
+- dunst
+- nvim
+- picom
+- slstatus
+- st
+- zen browser
+
 **Fonts**:
 * Primary: IBM Plex Mono / BlexMono Nerd Font
 * Fallback icons: Font Awesome 6
