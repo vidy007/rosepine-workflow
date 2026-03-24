@@ -1,0 +1,67 @@
+From e7f651b1321747fb92521522f0aa07a01160d4af Mon Sep 17 00:00:00 2001
+From: Jasper Shovelton <Beanie.github@proton.me>
+Date: Tue, 26 Dec 2023 12:57:35 +0000
+Subject: [PATCH] Add a `borderpx` value to `rules` in `config.def.h`.
+
+---
+ config.def.h | 6 +++---
+ dwm.c        | 5 ++++-
+ 2 files changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 9efa774..bdddfa5 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -26,9 +26,9 @@ static const Rule rules[] = {
+ 	 *	WM_CLASS(STRING) = instance, class
+ 	 *	WM_NAME(STRING) = title
+ 	 */
+-	/* class      instance    title       tags mask     isfloating   monitor */
+-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	/* class      instance    title       tags mask     isfloating   monitor   border width */
++	{ "Gimp",     NULL,       NULL,       0,            1,           -1,       -1 },
++	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,       0 },
+ };
+ 
+ /* layout(s) */
+diff --git a/dwm.c b/dwm.c
+index f1d86b2..48403c2 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -139,6 +139,7 @@ typedef struct {
+ 	unsigned int tags;
+ 	int isfloating;
+ 	int monitor;
++	int bw;
+ } Rule;
+ 
+ /* function declarations */
+@@ -287,6 +288,7 @@ applyrules(Client *c)
+ 	/* rule matching */
+ 	c->isfloating = 0;
+ 	c->tags = 0;
++	c->bw = borderpx;
+ 	XGetClassHint(dpy, c->win, &ch);
+ 	class    = ch.res_class ? ch.res_class : broken;
+ 	instance = ch.res_name  ? ch.res_name  : broken;
+@@ -299,6 +301,8 @@ applyrules(Client *c)
+ 		{
+ 			c->isfloating = r->isfloating;
+ 			c->tags |= r->tags;
++			if (r->bw != -1)
++				c->bw = r->bw;
+ 			for (m = mons; m && m->num != r->monitor; m = m->next);
+ 			if (m)
+ 				c->mon = m;
+@@ -1059,7 +1063,6 @@ manage(Window w, XWindowAttributes *wa)
+ 		c->y = c->mon->wy + c->mon->wh - HEIGHT(c);
+ 	c->x = MAX(c->x, c->mon->wx);
+ 	c->y = MAX(c->y, c->mon->wy);
+-	c->bw = borderpx;
+ 
+ 	wc.border_width = c->bw;
+ 	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
+-- 
+2.43.0
+

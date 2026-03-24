@@ -1,0 +1,5 @@
+# xrandr --output eDP-1 --brightness 1.99
+~/.fehbg
+killall eww && ./eww-mainframe.sh
+notify-send --icon=bluetooth-offline --urgency=low "Welcome back! " -t 2000
+# vibrant-cli eDP-1 0

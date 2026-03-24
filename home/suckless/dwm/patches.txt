@@ -1,0 +1,11 @@
+actualfullscreen
+anybar
+autostart
+centerfirstwindow
+fadeinactive
+ipc
+resizecorners
+resizehere
+smartborders
+togglefloatingcenter
+vanitygaps

@@ -1,0 +1,26 @@
+From 4b531966e2c630ddf1810ce68eb96656cb9cbfb2 Mon Sep 17 00:00:00 2001
+From: avalonwilliams <avalonwilliams@protonmail.com>
+Date: Tue, 8 Mar 2022 09:51:03 -0500
+Subject: [PATCH] nobadweight patch
+
+Fixes issues that certain fonts have due to badweight detection.
+This in particular effects the Go Mono font
+---
+ x.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/x.c b/x.c
+index cd96575..be86e68 100644
+--- a/x.c
++++ b/x.c
+@@ -957,7 +957,6 @@ xloadfont(Font *f, FcPattern *pattern)
+ 	    XftResultMatch)) {
+ 		if ((XftPatternGetInteger(f->match->pattern, "weight", 0,
+ 		    &haveattr) != XftResultMatch) || haveattr != wantattr) {
+-			f->badweight = 1;
+ 			fputs("font weight does not match\n", stderr);
+ 		}
+ 	}
+-- 
+2.35.1
+

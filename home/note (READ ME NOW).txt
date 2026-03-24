@@ -1,0 +1,5 @@
+this config requires 'pure' theme to be installed, more about it here: https://github.com/sindresorhus/pure
+
+the command for my 'ds mode': xrandr --output HDMI-2 --output eDP-1 --pos 300x1080
+
+check 'singlemon' and 'multimon' btw

@@ -1,0 +1,26 @@
+From 6e2c32980afe5d9add42e9f627acf05cf35f394b Mon Sep 17 00:00:00 2001
+From: vidy007 <apoteraev65@gmail.com>
+Date: Fri, 2 Jan 2026 13:52:16 +0700
+Subject: [PATCH] The patch replacec bold fonts with medium ones (because
+ sometimes bold style looks gross)
+
+---
+ x.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/x.c b/x.c
+index d73152b..afc7a0b 100644
+--- a/x.c
++++ b/x.c
+@@ -1038,7 +1038,7 @@ xloadfonts(const char *fontstr, double fontsize)
+ 		die("can't open font %s\n", fontstr);
+ 
+ 	FcPatternDel(pattern, FC_WEIGHT);
+-	FcPatternAddInteger(pattern, FC_WEIGHT, FC_WEIGHT_BOLD);
++	FcPatternAddInteger(pattern, FC_WEIGHT, FC_WEIGHT_MEDIUM);
+ 	if (xloadfont(&dc.ibfont, pattern))
+ 		die("can't open font %s\n", fontstr);
+ 
+-- 
+2.52.0
+

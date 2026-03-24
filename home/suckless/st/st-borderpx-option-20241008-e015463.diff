@@ -1,0 +1,74 @@
+From e01546322047ad4d0c5b613dc83f1425c360839a Mon Sep 17 00:00:00 2001
+From: cedilla <cedilla@dimension.sh>
+Date: Tue, 8 Oct 2024 16:25:03 +0200
+Subject: [PATCH] Allow to set border value using for example -b 18
+
+---
+ st.1 | 8 ++++++++
+ x.c  | 7 +++++--
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/st.1 b/st.1
+index 39120b4..9ad3783 100644
+--- a/st.1
++++ b/st.1
+@@ -4,6 +4,8 @@ st \- simple terminal
+ .SH SYNOPSIS
+ .B st
+ .RB [ \-aiv ]
++.RB [ \-b
++.IR borderpx ]
+ .RB [ \-c
+ .IR class ]
+ .RB [ \-f
+@@ -28,6 +30,8 @@ st \- simple terminal
+ .PP
+ .B st
+ .RB [ \-aiv ]
++.RB [ \-b
++.IR borderpx ]
+ .RB [ \-c
+ .IR class ]
+ .RB [ \-f
+@@ -55,6 +59,10 @@ is a simple terminal emulator.
+ .B \-a
+ disable alternate screens in terminal
+ .TP
++.BI \-b " borderpx"
++set border size to
++.I borderpx
++.TP
+ .BI \-c " class"
+ defines the window class (default $TERM).
+ .TP
+diff --git a/x.c b/x.c
+index d73152b..bda127c 100644
+--- a/x.c
++++ b/x.c
+@@ -2026,11 +2026,11 @@ run(void)
+ void
+ usage(void)
+ {
+-	die("usage: %s [-aiv] [-c class] [-f font] [-g geometry]"
++	die("usage: %s [-aiv] [-b borderpx] [-c class] [-f font] [-g geometry]"
+ 	    " [-n name] [-o file]\n"
+ 	    "          [-T title] [-t title] [-w windowid]"
+ 	    " [[-e] command [args ...]]\n"
+-	    "       %s [-aiv] [-c class] [-f font] [-g geometry]"
++	    "       %s [-aiv] [-b borderpx] [-c class] [-f font] [-g geometry]"
+ 	    " [-n name] [-o file]\n"
+ 	    "          [-T title] [-t title] [-w windowid] -l line"
+ 	    " [stty_args ...]\n", argv0, argv0);
+@@ -2047,6 +2047,9 @@ main(int argc, char *argv[])
+ 	case 'a':
+ 		allowaltscreen = 0;
+ 		break;
++	case 'b':
++		borderpx = atoi(EARGF(usage()));
++		break;
+ 	case 'c':
+ 		opt_class = EARGF(usage());
+ 		break;
+-- 
+2.45.2
+

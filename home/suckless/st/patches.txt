@@ -1,0 +1,10 @@
+anysize
+blinking_cursor
+borderpx-option
+boxdraw
+disable-bold-italic-fonts
+glyph-wide-support-boxdraw
+nobadweight
+replacebold
+scrollback(+mouse)
+w3m
