@@ -21,7 +21,7 @@ soon(i guessssssssss)
 (where the folders should be unpacked)
 ```
 home -> /home/[your name here]
-config -> ~/.config)
+config -> ~/.config
 bin -> ~/.local/bin/rofiscripts/
 ```
 
