@@ -1,0 +1,173 @@
+#!/bin/bash
+bat=$(cat /sys/class/power_supply/BAT0/capacity)
+stat=$(cat /sys/class/power_supply/BAT0/status)
+if [ "$stat" == "Charging" ]
+then
+  # icon="󰂄"
+  # class="bat-green"
+  # background="#308052"
+  # foreground="#6ec687"
+  	if [ $bat -le 100 ] 
+	then
+	  icon="󰂄"
+	fi
+	if [ $bat -le 90 ] 
+	then
+	  icon="󰂋"
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 78 ]
+	then
+	  icon="󰂊" 
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 66 ]
+	then
+	  icon="󰢞" 
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 55 ]
+	then
+	  icon="󰂉" 
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 43 ]
+	then
+	  icon="󰢝" 
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 32 ]
+	then
+	  icon="󰂈"
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 20 ]
+	then
+	  icon="󰂇" 
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 16 ]
+	then
+	  icon="󰂆" 
+	  class="bat-green"
+	  background="#308052"
+	  foreground="#6ec687"
+	fi
+	if [ $bat -le 8 ]
+	then
+	  icon="󰢜" 
+	  class="bat-red"
+	  background="#c4373d"
+	  foreground="#df5b61"
+	fi
+  	if [ $bat -le 5 ]
+	then
+	  icon="󰢟"
+	  class="bat-red"
+	  background="#c4373d"
+	  foreground="#df5b61"
+	fi
+	fi
+if [ $bat -le 100 ]
+then
+  icon="󰁹"
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 90 ]
+then
+  icon="󰂂"
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 85 ]
+then
+  icon="󰂁" 
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 74 ]
+then
+  icon="󰂀" 
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 63 ]
+then
+  icon="󰁿" 
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 52 ]
+then
+  icon="󰁾" 
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 41 ]
+then
+  icon="󰁽"
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 30 ]
+then
+  icon="󰁼" 
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 20 ]
+then
+  icon="󰁻" 
+  class="bat-green"
+  background="#308052"
+  foreground="#6ec687"
+fi
+if [ $bat -le 15 ]
+then
+  icon="󰁻" 
+  class="bat-red"
+  background="#c4373d"
+  foreground="#df5b61"
+fi
+if [ $bat -lt 8 ]
+then
+  icon="󱃍"
+  class="bat-red"
+  background="#c4373d"
+  foreground="#df5b61"
+fi
+
+if [[ $1 == '--icon' ]]; then
+  echo $icon
+elif [[ $1 == '--bg' ]]; then
+  echo $background
+elif [[ $1 == '--fg' ]]; then
+  echo $foreground
+elif [[ $1 == '--class' ]]; then
+  echo $class
+elif [[ $1 == '--val' ]]; then
+  echo $bat
+fi
