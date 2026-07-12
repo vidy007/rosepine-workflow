@@ -1,4 +1,4 @@
-[X] add dunst
-[ ] add /usr/share/fonts
-[ ] add .themes and .icons
-[~] make some screenshots
+- [X] add dunst
+- [ ] add /usr/share/fonts
+- [ ] add .themes and .icons
+- [~] make some screenshots
