@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+# STATUS=$(echo $(iwctl station wlan0 show | grep State | cut -b 10-))
+STRENGTH=$(iw dev wlan0 link | awk '/signal:/{print $2}')
+# if [[ $STATUS != "State disconnected" ]]; then
+if [[ $STRENGTH -gt -85 ]] && [[ $STRENGTH -lt -60 ]]; then
+	echo "󰤟"
+elif [[ $STRENGTH -ge -60 ]] && [[ $STRENGTH -le -30 ]]; then
+	echo "󰤢"
+elif [[ $STRENGTH -gt -30 ]] && [[ $STRENGTH -le -20 ]]; then
+	echo "󰤥"
+elif [[ $STRENGTH -gt -20 ]]; then
+	echo "󰤨"
+else
+	echo "󰤮"
+fi
+# else
+	# echo "󰤮"
+# fi

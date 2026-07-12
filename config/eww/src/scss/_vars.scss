@@ -1,0 +1,75 @@
+* {
+  all: unset;
+}
+
+$background : #191724;
+$foreground : #e0def4;
+$background-alt : #1f1d2e;
+$background-light : #26233a;
+$foreground-alt : #e0def4;
+$red : #eb6f92;
+$red-light : #eb6f92;
+
+$green : #31748f;
+$green-light : #31748f;
+
+
+$yellow : #f6c177;
+$yellow-light : #f6c177;
+
+$orange: #ebbcba;
+
+$blue : #9ccfd8;
+// $blue-light : #479fe8;
+$blue-light : #ebbcba;
+
+$cyan : #ebbcba;
+$cyan-light : #ebbcba;
+
+$magenta : #c4a7e7;
+$magenta-light : #c4a7e7;
+
+$comment : #403d52;
+$comment-light : #6e6a86;
+// $accent : #738c64;
+$accent : $blue-light;
+
+.commentlight {
+  color: $comment-light
+}
+
+.accent {
+  color: $accent;
+}
+
+.comment {
+  color: $comment;
+}
+
+.red {
+  color: $red;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.green {
+  color: $green;
+}
+
+.magenta {
+  color: $magenta;
+}
+
+.blue {
+  color: $blue;
+}
+
+.cyan {
+  color: $cyan;
+}
+
+.white {
+  color: $foreground-alt;
+}

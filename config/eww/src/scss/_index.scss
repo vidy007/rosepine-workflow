@@ -1,0 +1,67 @@
+.mainframe {
+  background-color: $background;
+  padding: 6px;
+  border-radius: 34px;
+
+  &_button {
+    font-family: "Material Design Icons Desktop";
+    border-radius: 25px;
+    background: $background-light;
+    opacity: 0.4;
+    padding: 0rem;
+    color: $foreground;
+    font-size: 1.45rem;
+
+
+    &_label {
+      font-family: "BlexMono Nerd Font";
+      // font-size: 1.1rem;
+    }
+  }
+
+  &_settings {
+    background-color: $background;
+    padding: 10px;
+    border-radius: 41px;
+  }
+
+  &_scales {
+    // margin: 0rem 0;
+    font-family: "iosevka nerd font";
+    padding: 1.4rem;
+    background-color: $background-alt;
+    border-radius: 29px;
+  }
+
+  &_scale_label {
+    font-family: "Material Design Icons desktop";
+    font-size: 1.5rem;
+    color: $foreground-alt;
+  }
+
+  &_scale_value {
+    color: $foreground-alt;
+  }
+
+  &_scale trough {
+    min-height: 22px;
+    border-radius: 22px;
+    background-color: $background-light;
+    // border: 1px solid $blue;
+  }
+
+
+  &_scale trough highlight {
+    border-radius: 22px;
+    background: $blue-light;
+  }
+
+}
+
+.active {
+  // background: rgba(#647ea7, 0.1);
+  color: $background;
+  background-color: $accent;
+  border-radius: 15px;
+  opacity: 1;
+}

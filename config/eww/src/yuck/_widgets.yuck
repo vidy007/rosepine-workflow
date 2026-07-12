@@ -1,0 +1,50 @@
+(defwidget mainframe_button[func label altfunc icon activevar]
+  (box :orientation 'h' :class 'commentlight mainframe_button_whole' :space-evenly false :spacing 0
+    (box :orientation 'h' :hexpand true :class 'mainframe_button ${activevar == "active" ? "active" : ""}' :space-evenly false :width 60 :height 50 
+      (button :onrightclick altfunc :onclick func  :hexpand true :class 'mainframe_button_icon_box'
+          (label :class 'mainframe_button_icon' :halign 'center' :text icon)
+        )
+    )
+  )
+)
+
+(defwidget mainframe_settings[]
+  (box :orientation 'h' :class 'mainframe_settings' :space-evenly false :spacing 8
+          (mainframe_button :label ssid :func "~/.config/eww/scripts/wifi --toggle" :altfunc "~/.local/bin/rofiscripts/wifimenu &" :icon '󰤨' :activevar wifiactive)
+          (mainframe_button :label 'Bluetooth' :func "~/.config/eww/scripts/bluetooth --toggle" :altfunc "~/.local/bin/rofiscripts/bluetoothmenu" :icon '󰂯' :activevar btactive)
+          (mainframe_button :label 'Airplane Mode' :func "~/.config/eww/scripts/airplanemode --toggle" :altfunc "dunstify 'Toggle Airplane Mode'" :icon '󰀝' :activevar apactive)
+          (mainframe_button :label 'Do Not Disturb' :func "~/.config/eww/scripts/donotdisturb --toggle" :altfunc "st -e nvim ~/.config/dunst/dunstrc &" :icon '󰍶' :activevar dndactive)
+  )
+)
+
+(defwidget mainframe_scale[label value func scalelabel]
+   (box
+    :orientation "h"
+    :space-evenly "false" :spacing 16 :class "mainframe_scale_box"
+      (box :orientation "h" :valign "center" :class "mainframe_scale_label " label)
+      (scale :class "mainframe_scale white ${scalelabel}"
+              :min 0
+              :hexpand true
+              :max 100
+              :orientation "h"
+              :value value
+              :onchange func
+              :valign 'center')
+      (box :orientation "h" :valign "center" :class "mainframe_scale_value" '${round(value,0)+1}%')
+    )
+
+)
+
+(defwidget mainframe_scales[]
+  (box :orientation 'v' :class 'mainframe_scales' :space-evenly false :spacing 15
+      (mainframe_scale :func "pamixer --set-volume $(printf %d {})" :scalelabel "mainframe_scale_volume" :value volume :label "󰕾")
+      (mainframe_scale :func "brightnessctl s {}%" :scalelabel "mainframe_scale_brightness" :value brightness :label "󰃞")
+    )
+)
+
+(defwidget mainframe[]
+  (box :orientation 'v' :hexpand true :space-evenly false :class 'mainframe'
+    (mainframe_settings)
+    (mainframe_scales)
+  )
+)

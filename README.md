@@ -6,24 +6,15 @@
 
 ---
 > [!WARNING]
-> This is my **personal** desktop configuration, which means i **won't** merge any of PRs regarding it's look and feel. 
-> Everyone has their own taste of things so please don't spam in github issues thank you 
+> This is mostly a personal repo so please don't spam in github issues thank you 
 >
-> Feel free to fork the repo and customize these dots however you want!!
+> Feel free to fork it and customize these dots however you want!!
+> (just don't claim them as yours)
 ---
 
 **Showcase!**
 --
-soon(i guessssssssss)
-
-**Directories meaning**
---
-(where the folders should be unpacked)
-```
-home -> /home/[your name here]
-config -> ~/.config
-bin -> ~/.local/bin/rofiscripts/
-```
+soon(really soon)
 
 **Required packages** 
 --
@@ -31,6 +22,9 @@ list for archlinux (yay):
 ```
 st dunst eww feh dwm polybar rofi ttf-ibmplex-mono-nerd ttf-ibm-plex
 ```
+(probably smth else but i moved to gentoo so can't tell)
+
+(also fonts will be included with the dots in the next commit)
 
 **Wallpaper!**
 --
@@ -38,12 +32,8 @@ st dunst eww feh dwm polybar rofi ttf-ibmplex-mono-nerd ttf-ibm-plex
 
 **Cool features!!**
 --
-*zsh // pure theme // neovim // pfetch // zen browse // lots of custom patches // build files included // picom*
+*zsh // pure theme // neovim // pfetch // zen browser // fancy animations via picom*
 
 **Downsides**
 --
-battery usage **~0.7w** yikes
-
-**Troubleshooting**
---
-create an issue, ill try my best to fix it as soon as possible
+battery usage **>=0.7w** yikes

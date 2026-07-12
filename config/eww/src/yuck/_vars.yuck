@@ -1,0 +1,22 @@
+(defpoll thourtime :interval "40s" `date +"%a %I:%M %p"`)
+(defpoll day :interval "1m" `date +"%A"`)
+(defpoll apactive :interval '1s' "~/.config/eww/scripts/airplanemode --class")
+(defpoll dndactive :interval '1s' "~/.config/eww/scripts/donotdisturb --class")
+(defpoll wifiactive :interval '1s' "~/.config/eww/scripts/wifi --class")
+(defpoll btactive :interval '1s' "~/.config/eww/scripts/bluetooth --class")
+(defpoll picomactive :interval '1s' "~/.config/eww/scripts/picom --class")
+(defpoll micmute :interval '1s' 'pamixer --source 1 --get-mute')
+
+(defpoll ssid :interval '3s' `~/.config/eww/scripts/wifi --ssid`)
+
+(defpoll user :interval '5m' `echo $USER`)
+(defpoll host :interval '5m' `cat /etc/hostname`)
+
+(defpoll brightness :interval "1s" `xbacklight -get`)
+(defpoll volume :interval "1s" `pamixer --get-volume`)
+
+(defpoll battery_icon :interval "1m" `~/.local/bin/battery --icon`)
+(defpoll battery_perc :interval "1m" `~/.local/bin/battery --val`)
+
+(deflisten cards "~/.config/eww/scripts/notification_logger.zsh subscribe")
+(defpoll critical :interval "1s" "~/.config/eww/scripts/notification_logger.zsh crits")
